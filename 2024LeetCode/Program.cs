@@ -9,6 +9,7 @@ using static _2024LeetCode.LongestPalindromicSubstring;
 using static _2024LeetCode.LongestSubstringWithoutRepeatCharacters;
 using static _2024LeetCode.RotateMatrixNinetyDegrees;
 using static _2024LeetCode.KaprekarsContant;
+using static _2024LeetCode.AddTwoNumbers;
 
 Console.WriteLine("Leet Code - 2024!");
 Console.WriteLine('\n');
@@ -33,3 +34,5 @@ Console.WriteLine('\n');
 TestRotate();
 Console.WriteLine('\n');
 TestKaprekar();
+Console.WriteLine('\n');
+TestAdd2Numbers();
