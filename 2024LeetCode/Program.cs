@@ -10,6 +10,7 @@ using static _2024LeetCode.LongestSubstringWithoutRepeatCharacters;
 using static _2024LeetCode.RotateMatrixNinetyDegrees;
 using static _2024LeetCode.KaprekarsContant;
 using static _2024LeetCode.AddTwoNumbers;
+using static _2024LeetCode.PivotPartitionList;
 
 Console.WriteLine("Leet Code - 2024!");
 Console.WriteLine('\n');
@@ -36,3 +37,5 @@ Console.WriteLine('\n');
 TestKaprekar();
 Console.WriteLine('\n');
 TestAdd2Numbers();
+Console.WriteLine('\n');
+TestPivot();
