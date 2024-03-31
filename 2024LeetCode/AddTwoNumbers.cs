@@ -74,7 +74,7 @@
             Console.WriteLine(string.Format("Add2Numbers Fail! {0} + {1}; Expected: {2}; Actual: {3};", input1Int, input2Int, expectedInt, actualInt));
         }
 
-        private static ListNode Add2Numbers(ListNode l1, ListNode l2)
+        private static ListNode Add2NumbersAsInt(ListNode l1, ListNode l2)
         {
             ListNode currentL1 = l1;
             int currentL1TensPlace = 1;
@@ -117,6 +117,39 @@
             }
 
             return head.next;
+        }
+
+        private static ListNode Add2Numbers(ListNode l1, ListNode l2)
+        {
+            int carry = 0;
+            ListNode firstNode = null;
+            ListNode currentNode = null;
+            while(l1 != null || l2 != null || carry != 0)
+            {
+                int l1Data = l1 != null ? l1.val : 0;
+                int l2Data = l2 != null ? l2.val : 0;
+
+                int sum = l1Data + l2Data + carry;
+
+                int quotient = Math.DivRem(sum, 10, out int remainder);
+                carry = quotient;
+                ListNode newNode = new(remainder);
+                if (firstNode == null)
+                {
+                    firstNode = newNode;
+                    currentNode = newNode;
+                }
+                else
+                {
+                    currentNode.next = newNode;
+                    currentNode = currentNode.next;
+                }
+
+                l1 = l1?.next;
+                l2 = l2?.next;
+
+            }
+            return firstNode;
         }
     }
 }
