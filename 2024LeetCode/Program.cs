@@ -11,6 +11,8 @@ using static _2024LeetCode.RotateMatrixNinetyDegrees;
 using static _2024LeetCode.KaprekarsContant;
 using static _2024LeetCode.AddTwoNumbers;
 using static _2024LeetCode.PivotPartitionList;
+using static _2024LeetCode.CompressString;
+using static _2024LeetCode.BinaryTreeRootToLeafPaths;
 
 Console.WriteLine("Leet Code - 2024!");
 Console.WriteLine('\n');
@@ -39,3 +41,7 @@ Console.WriteLine('\n');
 TestAdd2Numbers();
 Console.WriteLine('\n');
 TestPivot();
+Console.WriteLine('\n');
+TestCompressString();
+Console.WriteLine('\n');
+TestGetAllRootToLeafPaths();
