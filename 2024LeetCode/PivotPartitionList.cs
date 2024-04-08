@@ -1,4 +1,6 @@
-﻿namespace _2024LeetCode
+﻿using static _2024LeetCode.Test.Helpers;
+
+namespace _2024LeetCode
 {
     // Given a pivot x, and a list lst, partition the list into three parts.
 
@@ -48,16 +50,13 @@
 
             if (pass)
             {
-                Console.WriteLine(string.Format("Pivot Pass! List to pivot: {0} with pivot {1}; Actual: {2};", ListToString(inputCopy), pivot, ListToString(actual)));
+                Console.WriteLine(string.Format("Pivot Pass! List to pivot: {0} with pivot {1}; Actual: {2};"
+                    , ListIntToString(inputCopy), pivot, ListIntToString(actual)));
                 return;
             }
-            Console.WriteLine(string.Format("Pivot Fail! List to pivot: {0} with pivot {1}; Actual: {2};", ListToString(inputCopy), pivot, ListToString(actual)));
+            Console.WriteLine(string.Format("Pivot Fail! List to pivot: {0} with pivot {1}; Actual: {2};"
+                , ListIntToString(inputCopy), pivot, ListIntToString(actual)));
         }
-        private static string ListToString(List<int> list)
-        {
-            return "[" + string.Join(", ", list) + "]";
-        }
-
 
         private static List<int> PivotNaive(List<int> numbers, int pivotPt)
         {

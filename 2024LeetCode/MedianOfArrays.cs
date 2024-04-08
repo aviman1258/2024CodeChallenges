@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using static _2024LeetCode.Test.Helpers;
 
 namespace _2024LeetCode
 {
@@ -18,29 +19,11 @@ namespace _2024LeetCode
             if (actual != expected)
             {
                 Console.WriteLine(string.Format("Finding Median Fail! Median of {0} and {1} found to be {2}. Should be {3}", 
-                    ArrayToString(input1), ArrayToString(input2), actual, expected));
+                    IntArrayToString(input1), IntArrayToString(input2), actual, expected));
                 return;
             }
             Console.WriteLine(string.Format("Finding Median Pass! Median of {0} and {1} found to be {2}. Should be {3}",
-                    ArrayToString(input1), ArrayToString(input2), actual, expected));
-        }
-
-        private static string ArrayToString(int[] array)
-        {
-            StringBuilder sb = new();
-
-            sb.Append('[');
-            for (int i = 0; i < array.Length; i++)
-            {
-                sb.Append(array[i]);
-                if (i < array.Length - 1)
-                {
-                    sb.Append(", ");
-                }
-            }
-            sb.Append(']');
-
-            return sb.ToString();
+                    IntArrayToString(input1), IntArrayToString(input2), actual, expected));
         }
 
         private static double FindMedianSortedArrays(int[] nums1, int[] nums2)
