@@ -13,6 +13,7 @@ using static _2024LeetCode.AddTwoNumbers;
 using static _2024LeetCode.PivotPartitionList;
 using static _2024LeetCode.CompressString;
 using static _2024LeetCode.BinaryTreeRootToLeafPaths;
+using static _2024LeetCode.ThreeSum;
 
 Console.WriteLine("Leet Code - 2024!");
 Console.WriteLine('\n');
@@ -45,3 +46,5 @@ Console.WriteLine('\n');
 TestCompressString();
 Console.WriteLine('\n');
 TestGetAllRootToLeafPaths();
+Console.WriteLine('\n');
+TestGetThreeSums();

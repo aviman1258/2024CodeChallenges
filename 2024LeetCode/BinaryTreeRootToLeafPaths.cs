@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using static _2024LeetCode.Test.ListHelpers;
 
 namespace _2024LeetCode
 {
@@ -109,44 +110,12 @@ namespace _2024LeetCode
         private static void TestGetAllRootToLeafPaths(BinaryTree input, List<List<int>> expected)
         {
             List<List<int>> actual = GetAllRootToLeafPaths(input);
-            if (AreListEqual(actual, expected))
+            if (AreListListIntEqual(actual, expected))
             {
-                Console.WriteLine($"LongestPalindrome Pass! Tree to traverse:\n{input.PrintTree()}\nExpected: {PrintListList(expected)}\nActual: {PrintListList(actual)}");
+                Console.WriteLine($"LongestPalindrome Pass! Tree to traverse:\n{input.PrintTree()}\nExpected: {ListListIntToString(expected)}\nActual: {ListListIntToString(actual)}");
                 return;
             }
-            Console.WriteLine($"LongestPalindrome Fail! Tree to traverse:\n{input.PrintTree()}\nExpected: {PrintListList(expected)}\nActual: {PrintListList(actual)}");
-        }
-
-        static string PrintListList(List<List<int>> listList)
-        {
-            StringBuilder sb = new();
-            sb.Append("[ ");
-            foreach (var list in listList)
-            {
-                sb.Append("[ ");
-                sb.Append(string.Join(", ", list));
-                sb.Append(" ] ");
-            }
-            sb.Append(']');
-            return sb.ToString();
-        }
-
-        private static bool AreListEqual(List<List<int>> list1, List<List<int>> list2)
-        {
-            if(list1.Count != list2.Count) return false;
-
-            for (int i = 0; i < list1.Count; i++)
-            {
-                List<int> sublist1 = list1[i];
-                List<int> sublist2 = list2[i];
-
-                if (sublist1.Count != sublist2.Count) return false;
-
-                for (int j = 0; j < sublist1.Count; j++)
-                    if (sublist1[j] != sublist2[j]) return false;
-            }
-
-            return true;
+            Console.WriteLine($"LongestPalindrome Fail! Tree to traverse:\n{input.PrintTree()}\nExpected: {ListListIntToString(expected)}\nActual: {ListListIntToString(actual)}");
         }
 
         private static List<List<int>> GetAllRootToLeafPaths(BinaryTree tree)

@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using static _2024LeetCode.Test.Helpers;
+using static _2024LeetCode.Test.ListHelpers;
 
 namespace _2024LeetCode
 {
