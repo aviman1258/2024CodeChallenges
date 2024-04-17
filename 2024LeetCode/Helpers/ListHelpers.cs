@@ -1,4 +1,4 @@
-﻿namespace _2024LeetCode.Test
+﻿namespace _2024LeetCode.Helpers
 {
     public static class ListHelpers
     {
@@ -75,6 +75,20 @@
                 }
                 
                 if (!foundListInt) return false;
+            }
+
+            return true;
+        }
+
+        public static bool IntArraysAreEqual(int[] arr1, int[] arr2)
+        {
+            if(arr1.Length != arr2.Length) return false;
+
+            int n = arr1.Length;
+            
+            for(int i = 0; i < n; i++)
+            {
+                if( arr1[i] != arr2[i]) return false;
             }
 
             return true;

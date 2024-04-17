@@ -1,4 +1,4 @@
-﻿using static _2024LeetCode.Test.ListHelpers;
+﻿using static _2024LeetCode.Helpers.ListHelpers;
 
 namespace _2024LeetCode
 {
@@ -59,7 +59,7 @@ namespace _2024LeetCode
                 } 
             }
 
-            HashSet<IList<int>> hashSet = new(new Test.ListComparer());
+            HashSet<IList<int>> hashSet = new(new Helpers.ListComparer());
 
             foreach(IList<int> result in results)
             {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2024LeetCode
+﻿namespace _2024LeetCode
 {
     internal class ContainerWithMaxVolume
     {
