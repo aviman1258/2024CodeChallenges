@@ -51,11 +51,11 @@ namespace _2024LeetCode
             if (pass)
             {
                 Console.WriteLine(string.Format("Pivot Pass! List to pivot: {0} with pivot {1}; Actual: {2};"
-                    , ListIntToString(inputCopy), pivot, ListIntToString(actual)));
+                    , ListToString(inputCopy), pivot, ListToString(actual)));
                 return;
             }
             Console.WriteLine(string.Format("Pivot Fail! List to pivot: {0} with pivot {1}; Actual: {2};"
-                , ListIntToString(inputCopy), pivot, ListIntToString(actual)));
+                , ListToString(inputCopy), pivot, ListToString(actual)));
         }
 
         private static List<int> PivotNaive(List<int> numbers, int pivotPt)

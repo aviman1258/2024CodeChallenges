@@ -15,6 +15,7 @@ using static _2024LeetCode.CompressString;
 using static _2024LeetCode.BinaryTreeRootToLeafPaths;
 using static _2024LeetCode.ThreeSum;
 using static _2024LeetCode.RotateArray;
+using static _2024LeetCode.BuildingPopulation;
 
 Console.WriteLine("Leet Code - 2024!");
 Console.WriteLine('\n');
@@ -51,3 +52,5 @@ Console.WriteLine('\n');
 TestGetThreeSums();
 Console.WriteLine('\n');
 _2024LeetCode.RotateArray.TestRotate();
+Console.WriteLine('\n');
+TestGetMaxCountInterval();

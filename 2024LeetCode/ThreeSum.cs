@@ -18,9 +18,16 @@ namespace _2024LeetCode
 
             TestGetThreeSums(input, list);
 
-            input = new int[] { 0, 0, 0 };
+            input = new int[] { 0, 0, 0, 0 };
             list1 = new() { 0, 0, 0 };
             list = new() { list1 };
+
+            TestGetThreeSums(input, list);
+
+            input = new int[] { -2, 0, 1, 1, 2 };
+            list1 = new() { -2, 0, 2 };
+            list2 = new() { -2, 1, 1 };
+            list = new() { list1, list2 };
 
             TestGetThreeSums(input, list);
         }
@@ -72,8 +79,8 @@ namespace _2024LeetCode
 
         private static IList<IList<int>> GetThreeSums(int[] nums, int target = 0)
         {
-            List<IList<int>> result = new();
-            Helpers.Sort.QuickSort(nums);
+            List<IList<int>> results = new();
+            Array.Sort(nums);
 
             for (int i = 0; i < nums.Length - 2; i++)
             {                
@@ -84,8 +91,9 @@ namespace _2024LeetCode
                 {
                     if(nums[i] + nums[leftPtr] + nums[rightPtr] == target)
                     {
-                        result.Add(new List<int> { nums[i], nums[leftPtr], nums[rightPtr] });
-                        break;
+                        results.Add(new List<int> { nums[i], nums[leftPtr], nums[rightPtr] });
+                        leftPtr++;
+                        rightPtr--;
                     }
                     else if (nums[i] + nums[leftPtr] + nums[rightPtr] < target)
                     {
@@ -98,7 +106,15 @@ namespace _2024LeetCode
                 }
             }
 
-            return result;
+            HashSet<IList<int>> hashSet = new(new Helpers.ListComparer());
+
+            foreach (IList<int> result in results)
+            {
+                IList<int> sortedResult = result.OrderBy(x => x).ToList();
+                hashSet.Add(sortedResult);
+            }
+
+            return hashSet.ToList();
         }
     }
 }

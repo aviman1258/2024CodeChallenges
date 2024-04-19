@@ -1,4 +1,7 @@
-﻿namespace _2024LeetCode.Helpers
+﻿using System.Reflection;
+using System.Text;
+
+namespace _2024LeetCode.Helpers
 {
     public static class ListHelpers
     {
@@ -17,10 +20,32 @@
             return $"[{string.Join(", ", listListInt.Select(innerList => $"[{string.Join(", ", innerList)}]"))}]";
         }
 
-        public static string ListIntToString(List<int> list)
+        public static string ListToString(List<int> list)
         {
             return "[" + string.Join(", ", list) + "]";
         }
+
+        public static string ListToString<T>(List<T> list)
+        {
+            StringBuilder sb = new();
+
+            foreach (var item in list)
+            {
+                Type type = item.GetType();
+                FieldInfo[] fields = type.GetFields();
+
+                sb.Append($"{type.Name}: ");
+                foreach (var field in fields)
+                {
+                    sb.Append($"{field.Name} = {field.GetValue(item)}, ");
+                }
+                sb.Length -= 2; // Remove the trailing comma and space
+                sb.AppendLine();
+            }
+
+            return sb.ToString();
+        }
+
 
         public static bool AreListListIntEqual(List<List<int>> list1, List<List<int>> list2)
         {
