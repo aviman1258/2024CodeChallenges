@@ -1,5 +1,4 @@
-﻿using System.Text.Json;
-using static _2024LeetCode.Helpers.ListHelpers;
+﻿using static _2024LeetCode.Helpers.ListHelpers;
 
 namespace _2024LeetCode
 {
@@ -46,6 +45,12 @@ namespace _2024LeetCode
             };
 
             int[] expected = new int[] { 1526579928, 1526579950 };
+
+            TestGetMaxCountInterval(dataEntries, expected);
+
+            dataEntries = new();
+
+            expected = new int[] { 0, 0 };
 
             TestGetMaxCountInterval(dataEntries, expected);
         }
@@ -99,6 +104,8 @@ namespace _2024LeetCode
                     }
                 }
             }
+
+            if (maxCountEndTime == int.MaxValue) maxCountEndTime = 0;
 
             return new int[] { maxCountStartTime, maxCountEndTime };
         }

@@ -77,44 +77,55 @@ namespace _2024LeetCode
             return hashSet.ToList();
         }
 
-        private static IList<IList<int>> GetThreeSums(int[] nums, int target = 0)
+        private static IList<IList<int>> GetThreeSums(int[] nums)
         {
             List<IList<int>> results = new();
+
+            if( nums.Length <= 2 )
+                return results;
+
             Array.Sort(nums);
 
-            for (int i = 0; i < nums.Length - 2; i++)
-            {                
-                int leftPtr = i + 1;
-                int rightPtr = nums.Length - 1;
+            int start = 0;
+            int leftPtr, rightPtr;
+            int target;
 
-                while(leftPtr < rightPtr)
+            while(start < nums.Length - 2)
+            {                
+                leftPtr = start + 1;
+                rightPtr = nums.Length - 1;
+                target = nums[start] * -1;
+
+                while (leftPtr < rightPtr)
                 {
-                    if(nums[i] + nums[leftPtr] + nums[rightPtr] == target)
+                    if (nums[leftPtr] + nums[rightPtr] > target)
                     {
-                        results.Add(new List<int> { nums[i], nums[leftPtr], nums[rightPtr] });
-                        leftPtr++;
                         rightPtr--;
                     }
-                    else if (nums[i] + nums[leftPtr] + nums[rightPtr] < target)
+                    else if (nums[leftPtr] + nums[rightPtr] < target)
                     {
                         leftPtr++;
                     }
                     else
                     {
-                        rightPtr--;
+                        List<int> result = new() { nums[start], nums[leftPtr], nums[rightPtr] };
+                        results.Add(result);
+
+                        while (leftPtr < rightPtr && nums[leftPtr] == result[1])
+                            leftPtr++;
+
+                        while (leftPtr > rightPtr && nums[rightPtr] == result[2])
+                            rightPtr--;
                     }
                 }
+
+                int currentNum = nums[start];
+
+                while (start < nums.Length - 2 && nums[start] == currentNum)
+                    start++;
             }
 
-            HashSet<IList<int>> hashSet = new(new Helpers.ListComparer());
-
-            foreach (IList<int> result in results)
-            {
-                IList<int> sortedResult = result.OrderBy(x => x).ToList();
-                hashSet.Add(sortedResult);
-            }
-
-            return hashSet.ToList();
+            return results;
         }
     }
 }
