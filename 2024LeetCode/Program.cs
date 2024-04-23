@@ -56,4 +56,6 @@ _2024LeetCode.RotateArray.TestRotate();
 Console.WriteLine('\n');
 TestGetMaxCountInterval();
 Console.WriteLine('\n');
-TestColumnLabel();
+TestNumberToTitle();
+Console.WriteLine('\n');
+TestTitleToNumber();
